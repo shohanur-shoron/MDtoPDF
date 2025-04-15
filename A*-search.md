@@ -4,37 +4,24 @@
 
 **2. Theory:**
 
-*   **A* Search Algorithm:** A* (pronounced "A-star") is an informed search algorithm, widely used for pathfinding and graph traversal. It aims to find the path with the smallest cost (least distance, shortest time, etc.) between a designated start node and goal node in a graph. A* maintains a priority queue of nodes to visit, ordered by a cost function `f(n)`.
-*   **Cost Function `f(n)`:** For any node `n`, the cost function is defined as:
-    `f(n) = g(n) + h(n)`
-    *   `g(n)`: The actual cost of the path from the start node to node `n`. This is calculated by summing the costs of the steps taken so far.
-    *   `h(n)`: The heuristic estimate of the cost from node `n` to the goal node. This is an educated guess and must be *admissible* (never overestimates the true cost) for A* to guarantee finding the optimal path.
-*   **Algorithm Steps:**
-    1.  Initialize: Create a start node and a goal node. Add the start node to a priority queue (min-heap) called the `open set`. Maintain a `closed set` (initially empty) to store nodes already evaluated.
-    2.  Loop: While the `open set` is not empty:
-        a.  Select the node `current` from the `open set` with the lowest `f(n)` value.
-        b.  If `current` is the goal node, reconstruct the path by backtracking through parent pointers and return the path and its cost (`g(current)`).
-        c.  Move `current` from the `open set` to the `closed set`.
-        d.  Generate Neighbors: Identify all valid successor nodes (neighbors) of `current`.
-        e.  For each neighbor:
-            i.  If the neighbor is in the `closed set` or is an obstacle, ignore it.
-            ii. Calculate the tentative `g_cost` for the neighbor: `g(current) + cost(current, neighbor)`. The `cost(current, neighbor)` depends on the terrain cost of the *neighbor* cell and whether the move is cardinal or diagonal.
-            iii. If the neighbor is not in the `open set`, or if the tentative `g_cost` is lower than its current recorded `g_cost`:
-                *   Set the neighbor's parent to `current`.
-                *   Update the neighbor's `g_cost` to the tentative `g_cost`.
-                *   Calculate the neighbor's `h_cost` using the chosen heuristic.
-                *   Calculate the neighbor's `f_cost` (`g_cost + h_cost`).
-                *   If the neighbor is not in the `open set`, add it. If it was already there, update its position in the priority queue based on the new `f_cost`.
-    3.  Failure: If the `open set` becomes empty and the goal was not reached, no path exists.
+*   **A* Search:** A* ("A-star") is an intelligent search algorithm used to find the lowest-cost path between a start and goal point, like a robot navigating a grid. It prioritizes exploring paths that seem most promising.
+*   **Core Idea:** It uses a cost function `f(n) = g(n) + h(n)` for each grid cell (node `n`):
+    *   `g(n)`: The *actual* cost accumulated to reach node `n` from the start.
+    *   `h(n)`: A *heuristic guess* (an estimate) of the cost from node `n` to the goal. For A* to guarantee the best path, this guess must *never overestimate* the true cost (this is called an *admissible* heuristic).
+*   **How it Works:**
+    1.  Starts at the beginning node.
+    2.  Keeps a priority list (open set) of nodes to visit, ordered by the lowest `f(n)` cost.
+    3.  Repeatedly picks the best node from the list.
+    4.  If it's the goal, the path is found!
+    5.  Otherwise, it looks at its valid neighbors (up, down, left, right, diagonals).
+    6.  For each neighbor, it calculates the cost to reach it and estimates the remaining cost to the goal (`f(n)`).
+    7.  It updates the neighbor's info if this path is better than any previously found path to that neighbor and adds/updates it in the priority list.
+    8.  It keeps track of visited nodes (closed set) to avoid re-checking them unnecessarily.
 *   **Movement Costs:**
-    *   The robot can move in 8 directions (cardinal and diagonal).
-    *   The cost to move *into* a cell depends on that cell's terrain type. Default cost is 1.
-    *   Cardinal moves (up, down, left, right) cost `cost(destination_cell)`.
-    *   Diagonal moves cost `1.4 * cost(destination_cell)`.
-*   **Heuristics:** Heuristics estimate the remaining cost to the goal. Common options include:
-    *   **Manhattan Distance:** `|GoalX - CurrentX| + |GoalY - CurrentY|`. Good for grids where only cardinal movement is allowed or significantly cheaper. Underestimates cost when diagonal moves are frequent.
-    *   **Diagonal Distance:** `max(|GoalX - CurrentX|, |GoalY - CurrentY|)`. (Simplified version). A more accurate version considers the cost difference: `D * max(dx, dy) + (D2 - D) * min(dx, dy)` where D is cardinal cost (1) and D2 is diagonal cost (1.4). However, the simplified version `max(|dx|, |dy|)` scaled by minimum possible move cost (1) is admissible for 8-way movement if costs are uniform or scaled appropriately. *For this assignment, we will use the Diagonal Distance as defined: `max(|GoalX - CurrentX|, |GoalY - CurrentY|)`. Since the minimum cost is 1, this heuristic is admissible.*
-    *   **Euclidean Distance:** `sqrt((GoalX - CurrentX)^2 + (GoalY - CurrentY)^2)`. The straight-line distance. Admissible, but involves square roots which can be computationally more expensive.
+    *   Moving into a cell costs that cell's specified terrain value (default is 1).
+    *   Diagonal moves are penalized: `cost = 1.4 * destination_cell_cost`.
+    *   Cardinal (up, down, left, right) moves: `cost = destination_cell_cost`.
+*   **Heuristic Used (Diagonal Distance):** We use `h(n) = max(|GoalX - CurrentX|, |GoalY - CurrentY|)`. This estimates the minimum number of steps (cardinal or diagonal) needed, assuming a base cost of 1, making it admissible for our problem.
 
 **3. Motivation:**
 
