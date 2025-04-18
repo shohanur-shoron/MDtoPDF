@@ -515,8 +515,3 @@ Generating plot...
 *   Diagonal Distance heuristic worked well (admissible, efficient).
 *   Algorithm performance is suitable for this grid size.
 
-**Slide 10: Conclusion**
-*   A* is well-suited for pathfinding with varying costs.
-*   Correctly handles 8-directional movement and diagonal penalties.
-*   Provides optimal and efficient solutions for robotics/logistics navigation.
-*   Future work: Compare heuristics, path smoothing.
