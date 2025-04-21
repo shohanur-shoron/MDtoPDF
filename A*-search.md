@@ -509,9 +509,4 @@ Generating plot...
 *   (Show the generated Matplotlib figure of the grid with the path clearly marked)
 *   Explain how the path navigates obstacles and high-cost areas.
 
-**Slide 9: Discussion**
-*   A* successfully found the optimal path.
-*   Path balances distance vs. terrain cost (avoids expensive cells/obstacles).
-*   Diagonal Distance heuristic worked well (admissible, efficient).
-*   Algorithm performance is suitable for this grid size.
 
