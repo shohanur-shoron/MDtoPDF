@@ -505,8 +505,4 @@ Generating plot...
 *   Total Minimum Cost: `18.60` (Example value)
 *   Runtime: `0.00XXXX` seconds
 
-**Slide 8: Results: Visualization**
-*   (Show the generated Matplotlib figure of the grid with the path clearly marked)
-*   Explain how the path navigates obstacles and high-cost areas.
-
 
