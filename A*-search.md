@@ -498,11 +498,3 @@ Generating plot...
 *   Key Libraries: `heapq` (priority queue), `matplotlib` (visualization).
 *   `Node` class to store position, parent, g, h, f costs.
 *   Main loop structure (extract min f_cost, explore neighbors, update costs).
-
-**Slide 7: Results: Path and Cost**
-*   (Show the Python output)
-*   Path Found: `[(0, 0), (1, 1), ..., (9, 9)]` (Maybe shorten)
-*   Total Minimum Cost: `18.60` (Example value)
-*   Runtime: `0.00XXXX` seconds
-
-
