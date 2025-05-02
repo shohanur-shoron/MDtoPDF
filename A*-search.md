@@ -493,8 +493,3 @@ Generating plot...
 *   Point out Obstacles (X / Black).
 *   Indicate cells with special terrain costs (show values / colors).
 
-**Slide 6: Implementation Snippets (Optional/Brief)**
-*   Language: Python
-*   Key Libraries: `heapq` (priority queue), `matplotlib` (visualization).
-*   `Node` class to store position, parent, g, h, f costs.
-*   Main loop structure (extract min f_cost, explore neighbors, update costs).
