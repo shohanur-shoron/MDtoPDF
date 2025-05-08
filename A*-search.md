@@ -487,9 +487,4 @@ Generating plot...
     *   Good for 8-directional movement.
 *   (Briefly mention Manhattan/Euclidean as alternatives).
 
-**Slide 5: Grid Environment Setup (10x10)**
-*   (Show the visual representation of the grid from the report)
-*   Highlight Start (S), Goal (G).
-*   Point out Obstacles (X / Black).
-*   Indicate cells with special terrain costs (show values / colors).
 
