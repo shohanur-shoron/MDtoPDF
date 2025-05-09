@@ -487,4 +487,169 @@ Generating plot...
     *   Good for 8-directional movement.
 *   (Briefly mention Manhattan/Euclidean as alternatives).
 
+import google.generativeai as genai
 
+
+EMAIL_TYPE = ["congratulatory", "reminder", "promotion", "otp", "welcome", "transactional"]
+USER_TYPE = ["new_users", "old_users", "most_commenting_users", "most_liking_users", "most_profile_viewing_users"]
+
+schedule_meeting_function_decl = genai.FunctionDeclaration(
+    name="schedule_meeting",
+    description="Schedules a meeting with specified attendees at a given time and date.",
+    parameters={
+        "type": "OBJECT",
+        "properties": {
+            "attendees": {
+                "type": "ARRAY",
+                "items": {"type": "STRING"},
+                "description": "List of people attending the meeting.",
+            },
+            "date": {
+                "type": "STRING",
+                "description": "Date of the meeting (e.g., 'YYYY-MM-DD')",
+            },
+            "time": {
+                "type": "STRING",
+                "description": "Time of the meeting (e.g., 'HH:MM')",
+            },
+            "topic": {
+                "type": "STRING",
+                "description": "The subject or topic of the meeting.",
+            },
+        },
+        "required": ["attendees", "date", "time", "topic"],
+    },
+)
+
+email_user_function_decl = genai.FunctionDeclaration(
+    name="email_user",
+    description="Sends an email of a specific type to a defined group of users.",
+    parameters={
+        "type": "OBJECT",
+        "properties": {
+            "email_type": {
+                "type": "STRING",
+                "description": "The type of email content to send.",
+                "enum": EMAIL_TYPE
+            },
+            "user_type": {
+                "type": "STRING",
+                "description": "The category or segment of users to send the email to.",
+                "enum": USER_TYPE
+            }
+        },
+        "required": [
+            "email_type",
+            "user_type"
+        ]
+    }
+)
+
+available_tools = genai.Tool(function_declarations=[schedule_meeting_function_decl, email_user_function_decl])
+
+model = genai.GenerativeModel(
+    model_name="gemini-1.5-flash-latest",
+    tools=[available_tools],
+    generation_config=genai.GenerationConfig(
+        tool_config=genai.ToolConfig(
+            function_calling_config=genai.FunctionCallingConfig(
+                mode=genai.FunctionCallingConfig.Mode.ANY
+            )
+        )
+    )
+)
+
+chat = model.start_chat()
+
+message1 = 'email our oldest user and congratulate them for staying with us.'
+print(f"User: {message1}")
+response1 = chat.send_message(message1)
+
+if response1.candidates and response1.candidates[0].content and response1.candidates[0].content.parts:
+    part1 = response1.candidates[0].content.parts[0]
+    if part1.function_call:
+        print(f"Function call detected: {part1.function_call.name}")
+        print(f"Arguments: {part1.function_call.args}")
+
+        tool_response_content = f'Email function called successfully for user type: {part1.function_call.args.get("user_type")} with type: {part1.function_call.args.get("email_type")}'
+        print(f"Simulated Tool Response: {tool_response_content}")
+
+        response1_followup = chat.send_message(genai.ToolResponse(tool_state=[genai.ToolResponse.ToolState(name=part1.function_call.name, content=tool_response_content)]))
+
+        if response1_followup.candidates and response1_followup.candidates[0].content and response1_followup.candidates[0].content.parts:
+            part1_followup = response1_followup.candidates[0].content.parts[0]
+            if part1_followup.text:
+                 print(f"Model Response: {part1_followup.text}")
+            elif part1_followup.function_call:
+                 print(f"Model requested another function call: {part1_followup.function_call.name}")
+            else:
+                 print("Model returned an unexpected part type after tool response.")
+                 print(part1_followup)
+        else:
+            print("Model response after tool execution did not contain expected content parts.")
+            print(response1_followup)
+
+    elif part1.text:
+        print(f"Model Response: {part1.text}")
+    else:
+         print("Model returned an unexpected part type.")
+         print(part1)
+else:
+    print("Model response did not contain expected content parts.")
+    print(response1)
+
+message2 = "What other types of emails can I send?"
+print(f"\nUser: {message2}")
+response2 = chat.send_message(message2)
+
+if response2.candidates and response2.candidates[0].content and response2.candidates[0].content.parts:
+    part2 = response2.candidates[0].content.parts[0]
+    if part2.function_call:
+         print(f"Function call detected: {part2.function_call.name}")
+         print(f"Arguments: {part2.function_call.args}")
+    elif part2.text:
+        print(f"Model Response: {part2.text}")
+    else:
+         print("Model returned an unexpected part type.")
+         print(part2)
+else:
+    print("Model response did not contain expected content parts.")
+    print(response2)
+
+message3 = "Can you schedule a meeting with me tomorrow at 3 PM about the project status?"
+print(f"\nUser: {message3}")
+response3 = chat.send_message(message3)
+
+if response3.candidates and response3.candidates[0].content and response3.candidates[0].content.parts:
+    part3 = response3.candidates[0].content.parts[0]
+    if part3.function_call:
+         print(f"Function call detected: {part3.function_call.name}")
+         print(f"Arguments: {part3.function_call.args}")
+
+         tool_response_content3 = f'Meeting scheduled successfully for {part3.function_call.args.get("date")} at {part3.function_call.args.get("time")} with {", ".join(part3.function_call.args.get("attendees", []))} about {part3.function_call.args.get("topic")}'
+         print(f"Simulated Tool Response: {tool_response_content3}")
+
+         response3_followup = chat.send_message(genai.ToolResponse(tool_state=[genai.ToolResponse.ToolState(name=part3.function_call.name, content=tool_response_content3)]))
+
+         if response3_followup.candidates and response3_followup.candidates[0].content and response3_followup.candidates[0].content.parts:
+              part3_followup = response3_followup.candidates[0].content.parts[0]
+              if part3_followup.text:
+                   print(f"Model Response: {part3_followup.text}")
+              elif part3_followup.function_call:
+                   print(f"Model requested another function call: {part3_followup.function_call.name}")
+              else:
+                   print("Model returned an unexpected part type after tool response.")
+                   print(part3_followup)
+         else:
+              print("Model response after tool execution did not contain expected content parts.")
+              print(response3_followup)
+
+    elif part3.text:
+        print(f"Model Response: {part3.text}")
+    else:
+         print("Model returned an unexpected part type.")
+         print(part3)
+else:
+    print("Model response did not contain expected content parts.")
+    print(response3)
+```
