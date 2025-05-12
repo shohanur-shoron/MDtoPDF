@@ -99,6 +99,16 @@ This is not an easy task. It requires careful thought, planning, and ongoing eff
 
 ---
 
+
+
+
+Bangladesh is speeding fast towards an era of the digital age. We hear of "Digital Bangladesh" and today's "Smart Bangladesh." It means more people on the internet, online banking, online services by the government, and nearly all businesses online. It's good for the country and benefits the people's lives. However, when we do more using technology, we also face greater risks on the internet. These dangers are called cyber dangers. Things such as hackers stealing money or information, mean individuals posting falsehoods on the internet, or hacking critical computer systems.
+
+There is one new factor that is making it more complicated: Artificial Intelligence, or AI. AI is when computers can learn and make choices like humans, sometimes even quicker or smarter. AI can be extremely handy. It can help us to identify cyber threats quicker and protect our systems better. But AI can also be used by cybercriminals. They can use AI to create very advanced attacks which are hard to filter. For example, AI can create fake emails or fake videos (deepfakes) that can easily trick individuals. AI can also help hackers find computer system vulnerabilities much faster.
+
+Therefore, Bangladesh needs good laws and rules to address these new and old cyber threats. This assignment will analyze the laws Bangladesh has on cybersecurity. We will look at whether the laws are strong enough to address the issues that come with AI. We will look at the challenges and the loopholes – what is missing in the laws. Lastly, we will set out some recommendations as to how Bangladesh can make its cybersecurity robust in today's AI era. The prime message is that Bangladesh has started drafting laws but AI poses challenges that need new thinking and perhaps new legislation.
+
+
 **References**
 
 *   *Information and Communication Technology Act, 2006* (Act No. 39 of 2006, as amended). Bangladesh.
