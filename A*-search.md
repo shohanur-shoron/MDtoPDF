@@ -616,39 +616,7 @@ else:
     print("Model response did not contain expected content parts.")
     print(response2)
 
-message3 = "Can you schedule a meeting with me tomorrow at 3 PM about the project status?"
-print(f"\nUser: {message3}")
-response3 = chat.send_message(message3)
 
-if response3.candidates and response3.candidates[0].content and response3.candidates[0].content.parts:
-    part3 = response3.candidates[0].content.parts[0]
-    if part3.function_call:
-         print(f"Function call detected: {part3.function_call.name}")
-         print(f"Arguments: {part3.function_call.args}")
-
-         tool_response_content3 = f'Meeting scheduled successfully for {part3.function_call.args.get("date")} at {part3.function_call.args.get("time")} with {", ".join(part3.function_call.args.get("attendees", []))} about {part3.function_call.args.get("topic")}'
-         print(f"Simulated Tool Response: {tool_response_content3}")
-
-         response3_followup = chat.send_message(genai.ToolResponse(tool_state=[genai.ToolResponse.ToolState(name=part3.function_call.name, content=tool_response_content3)]))
-
-         if response3_followup.candidates and response3_followup.candidates[0].content and response3_followup.candidates[0].content.parts:
-              part3_followup = response3_followup.candidates[0].content.parts[0]
-              if part3_followup.text:
-                   print(f"Model Response: {part3_followup.text}")
-              elif part3_followup.function_call:
-                   print(f"Model requested another function call: {part3_followup.function_call.name}")
-              else:
-                   print("Model returned an unexpected part type after tool response.")
-                   print(part3_followup)
-         else:
-              print("Model response after tool execution did not contain expected content parts.")
-              print(response3_followup)
-
-    elif part3.text:
-        print(f"Model Response: {part3.text}")
-    else:
-         print("Model returned an unexpected part type.")
-         print(part3)
 else:
     print("Model response did not contain expected content parts.")
     print(response3)
