@@ -116,12 +116,6 @@ Therefore, Bangladesh needs good laws and rules to address these new and old cyb
 *   
 
 
-
-
-To fight cybercrime and protect its cyber space, Bangladesh has framed some important legislation and agencies.
-
-The first principal law was the Information and Communication Technology (ICT) Act, 2006. It was enacted to make business and government online. It also criminalized activities like hacking, stealing data online, spreading computer virus, and online fraud. The law subsequently was modified to impose more severe punishments on some offenses. But this law, especially one section titled Section 57, came under fire. Others believed it was done to stop people from speaking online freely. That section was axed.
-
 Next was the Digital Security Act, 2018 (DSA). This act substituted some of the previous ICT and introduced new rules. It deals with a lot of digital matters like online scams, impersonating someone online, sharing harmful content, hacking, and disrupting key computer systems like those for banks or electricity distribution. The DSA also created the Digital Security Agency (DSA), a state agency to regulate cybersecurity, and helped to consolidate the Bangladesh e-Government Computer Incident Response Team (BGD e-GOV CIRT), which helps in resolving cyber attacks.
 
 But the DSA law is also condemned to a large extent. Human rights groups and the media are worried that some provisions of the law are open-ended. They fear the law grants excessive powers to police and can be employed to muzzle those who criticize the government or speak their minds. Such a row shows the challenge in passing laws to safeguard people on the internet without taking away their freedom of speech.
