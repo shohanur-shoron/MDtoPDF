@@ -16,7 +16,7 @@ Seeking a development role where I can apply my skills in server-side technologi
 **Backend:** Python (Django, DRF), REST, JWT Auth  
 **Frontend:** JavaScript, HTML5, CSS3  
 **DevOps & Tools:** Git, Linux, Google Cloud
-**AI/ML:** Scikit-Learn 
+**AI/ML:** Scikit-Learn
 **Databases:** SQLlite, MySQL
 
 
