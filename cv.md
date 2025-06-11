@@ -2,24 +2,24 @@
 **Shohanur Rahman**  
 Backend Developer  
 📍 Dhaka, Bangladesh  
-✉️ shorons38@gmail.com  |  📞 +88 01723077965  
-🔗 linkedin.com/in/shohanur-rahman  |  🐙 github.com/shohanur-r
+✉️ shorons38@gmail.com  |  📞 +88 1723-077965  
+🔗 [linkedin.com/in/shohanur-rahman ](https://www.linkedin.com/in/shohanur-rahman-4a935232a/) |  🐙 [github.com/shohanur-r](https://github.com/shohanur-shoron)
 
----
 
-## Professional Summary
-Driven backend developer with ~1 year of experience building Django-based RESTful APIs and integrating AI/ML solutions. Skilled in database design, performance optimization, and team collaboration to deliver scalable microservices. Seeking to leverage strong Python expertise and research background in a fast-paced development environment.
 
----
+## Career Objective
+Seeking a development role where I can apply my skills in server-side technologies and AI to build scalable, intelligent systems and grow in a dynamic environment.
+
+
 
 ## Technical Skills
-**Backend:** Python (Django, DRF), REST & GraphQL, JWT Auth  
-**Frontend:** JavaScript (React), HTML5, CSS3  
-**DevOps & Tools:** Docker, Git, Linux, AWS  
-**AI/ML:** TensorFlow, PyTorch, NLP  
-**Databases:** PostgreSQL, MySQL, Redis
+**Backend:** Python (Django, DRF), REST, JWT Auth  
+**Frontend:** JavaScript, HTML5, CSS3  
+**DevOps & Tools:** Git, Linux, Google Cloud
+**AI/ML:** Scikit-Learn 
+**Databases:** SQLlite, MySQL
 
----
+
 
 ## Professional Experience
 
@@ -30,7 +30,7 @@ Driven backend developer with ~1 year of experience building Django-based RESTfu
 - Optimized database queries and introduced Redis caching, reducing average response times by 30%.  
 - Collaborated cross-functionally to integrate AI-driven analytics, improving user insights for clients.
 
----
+
 
 ## Projects & Research
 
@@ -57,25 +57,26 @@ Driven backend developer with ~1 year of experience building Django-based RESTfu
 - Designed a high-capacity FSO communication system using DWDM with 1.28 Tb/s across 64 channels (20 Gbps each).  
 - Implemented RZ coding over a 2 km FSO link; analyzed beam divergence, atmospheric attenuation, BER, Q-factor, and eye diagrams for reliable high-speed optical-wireless networks.
 
----
+
 
 ## Education
 **B.Sc. in Computer Science & Engineering**, University of Asia Pacific  
 *Expected Graduation: December 2025*  
-- Section D2, Semester 3-2  
-- Relevant Coursework: Data Structures, Databases, Machine Learning, Geospatial Analytics
+- Section D2, Semester 4-2  
+- Result: CGPA 3.52  
+- Relevant Coursework: Data Structures, Databases, Machine Learning
 
----
+
 
 ## Certifications & Publications
 - Dean’s Award (Year)
 
----
+
 
 ## Languages
 - Bengali (Native)  
 - English (Professional)
 
----
+
 
 *References available upon request.*
