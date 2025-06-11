@@ -23,12 +23,13 @@ Seeking a development role where I can apply my skills in server-side technologi
 
 ## Professional Experience
 
+## Professional Experience
+
 **Backend Developer**, Eutropia IT Solution, Dhaka  
-*Jan 2024 – Present*  
-- Developed and maintained RESTful APIs in Django REST Framework, handling 5,000+ daily requests.  
-- Implemented JWT-based authentication and role-based access control, enhancing security across microservices.  
-- Optimized database queries and introduced Redis caching, reducing average response times by 30%.  
-- Collaborated cross-functionally to integrate AI-driven analytics, improving user insights for clients.
+*Jan 2024 – July 2024*  
+- Created RESTful and GraphQL APIs to power client websites, ensuring reliable data delivery and integration.  
+- Customized Django admin panels with comprehensive data summarizations, including blog view analytics, top-performing content reports, and other key performance metrics.  
+
 
 
 
@@ -76,7 +77,3 @@ Seeking a development role where I can apply my skills in server-side technologi
 ## Languages
 - Bengali (Native)  
 - English (Professional)
-
-
-
-*References available upon request.*
