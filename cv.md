@@ -75,3 +75,8 @@ Seeking a development role where I can apply my skills in server-side technologi
 ## Languages
 - Bengali (Native)  
 - English (Professional)
+
+
+- **1st Runner-Up**, Hackathon at RoboExpo 2025: Led a team to rapid prototyping of an autonomous robot, securing second place among 20+ competitors.
+- **Participant**, National Data Analytics Competition (NDAC) 2025: Analyzed real-world datasets and delivered insights on socio-economic trends.
+- **Competitor**, National Hackathon at EWE 2024: Developed an IoT-based solution under 24-hour deadline, demonstrating prototype and pitch to judges.
