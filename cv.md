@@ -23,8 +23,6 @@ Seeking a development role where I can apply my skills in server-side technologi
 
 ## Professional Experience
 
-## Professional Experience
-
 **Backend Developer**, Eutropia IT Solution, Dhaka  
 *Jan 2024 – July 2024*  
 - Created RESTful and GraphQL APIs to power client websites, ensuring reliable data delivery and integration.  
