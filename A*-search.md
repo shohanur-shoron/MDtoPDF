@@ -415,7 +415,6 @@ if __name__ == "__main__":
 
 **7. Output (with figure):**
 
-*(The exact output will depend on running the code. Below is a representative example based on the defined grid)*
 
 ```
 Generated sample input file: astar_input.txt
